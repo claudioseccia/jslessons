@@ -7,3 +7,12 @@
 .paragraph {
   color: red;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  margin: 0;
+  padding: 1rem;
+  background-color: #eee;
+}
