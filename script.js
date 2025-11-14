@@ -314,3 +314,45 @@
 
 //convention to name a variable assigned to an HTML element: append El to variable name
 // const headingEl = document.querySelector(".heading");
+
+//_________________________ QUI
+//textContent --->  changes the text content of the element, textContent is both setter and getter
+// console.log("text content", headingEl.textContent); //getter
+//headingEl.textContent = "Hello <span class='heading--big'>everyone</span>!"; //setter ---> it doesn't inject html
+//this one will change the text to: Hello <span class='heading--big'>everyone</span>! literally, it doesn't inject html
+
+//innerHtml ---> changes the HTML content of the element, innerHtml is both setter and getter
+//console.log("innerHTML", headingEl.innerHTML); //getter
+//headingEl.innerHTML = "Hello <span class='heading--big'>everyone</span>!"; //setter <-- THIS WILL INJECT HTML
+
+//insertAdjacentHTML
+//adds element before or after another element
+// headingEl.insertAdjacentHTML(
+//   "afterend",
+//   "Hello <span class='heading--big'>everyone</span>!"
+// );
+
+//MANIPULATE STYLE
+//.style //not raccomended
+// headingEl.style.color = "#ff0000"; //.style changes an attribute
+// headingEl.style.fontSize = "55px"; //
+//classList
+// headingEl.classList.add("heading--big"); //add a class
+
+//*************************************************************************************************** */
+// -- events and functions for handling events (also called "event handlers") --
+const headingEl = document.querySelector(".heading");
+//addEventListener('EVENT_TYPE', FUNCTION)
+
+//handler function, usually called with the event type + Handler
+// const clickHandler = () => {
+//   headingEl.style.color = "red";
+//   console.log("changed color");
+// };
+// headingEl.addEventListener("click", clickHandler);
+
+//with an anonymous function
+// headingEl.addEventListener("click", () => {
+// //   headingEl.style.color = "red";
+//   console.log("changed color");
+// });
