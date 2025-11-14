@@ -341,7 +341,7 @@
 
 //*************************************************************************************************** */
 // -- events and functions for handling events (also called "event handlers") --
-const headingEl = document.querySelector(".heading");
+//const headingEl = document.querySelector(".heading");
 //addEventListener('EVENT_TYPE', FUNCTION)
 
 //handler function, usually called with the event type + Handler
@@ -356,3 +356,9 @@ const headingEl = document.querySelector(".heading");
 // //   headingEl.style.color = "red";
 //   console.log("changed color");
 // });
+
+const headingHandler = document.querySelector(".heading");
+function clickHandler() {
+    headingHandler.classList.add("headingOnClick");
+}
+headingHandler.addEventListener("click", clickHandler)
