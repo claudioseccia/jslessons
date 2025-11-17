@@ -3,32 +3,47 @@
 // var description = "We need a new floor.";
 // var squareMeters = 100; //camel case
 
-// var test = 5;
-// var test = 10; //overwrites previous value
+//var test = 5;
+//var test = 10; //overwrites previous value
 
 // //CONST
-// const testTwo = 5;
+//const testTwo = 5;
 // //const testTwo = 10; //throws error
 
-// //LET
+// //LET can change the value
 // let testThree = 5;
 // testThree = 10;
 
 // //BOOLEAN
-// const specialCoating = true;
+// const specialCoating = true; //true or false
+
+//boolean //string //number //array //object //null //undefined
+//null //undefined //0 //false ---> falsy
+// const value = 0; //falsy
+// if (value) {
+//   //if (true) {...}
+//   console.log("Value is true");
+// }
+
+// if (!value) {
+//   //if (false) {...}
+//   console.log("Value is false");
+// }
 
 // //ARRAY
-// const floorOptions = ["carpet", "hardwood", "tiles", 99, true];
+// const floorOptions = ["carpet", "hardwood", "tiles", 99, true, null];
 
 // const houseOptions = [
 //   "bathroom",
 //   "kitchen",
 //   "living room",
-//   ["bedroom 1", "bedroom 2", ["color 1", "color 2"]],
+//   ["bedroom 1", "bedroom 2", ["color 1", "color 2 questo"]],
 //   {
 //     ownerName: "John",
 //   },
 // ]; //multi-dimensional array
+// const color2 = houseOptions[3][2][1];
+// console.log(color2);
 
 // const renovationJob = {
 //   ownerName: "John",
@@ -45,7 +60,17 @@
 //     city: "New York",
 //   },
 // };
-
+// const maximumPrice = renovationJob.maximumPrice;
+// const secondColorOption = renovationJob.colorOptions[1];
+// console.log(
+//   "maximumPrice",
+//   maximumPrice,
+//   typeof maximumPrice,
+//   "secondColorOption ---->",
+//   secondColorOption,
+//   "owner address ---->",
+//   renovationJob.owner.address
+// );
 // let error = {
 //   statusCode: 404,
 //   description: "...",
@@ -66,10 +91,11 @@
 
 // {
 //   //BLOCK SCOPE
-//   const price = 1000 + 3000;
-//   let tax = 0.15;
+//   const price = 1000 + 3000; //block scoped
+//   let tax = 0.15; //block scoped
 //   var total = price + price * tax; //<---- var is accessible outside the block
 // }
+// console.log("price", price, "tax", tax, "total", total);
 // console.log(total);
 // -- traditional functions vs arrow functions --
 //traditional function - named function
@@ -77,19 +103,20 @@
 //   const price = 1000 + 3000;
 //   console.log(price);
 // }
-// calculatePrice(); //call the function
-
+// // calculatePrice(); //call the function
+// console.log(price);
 //adding a parameter
 // function calculatePrice(squareMeters) {
 //   const price = 1000 * squareMeters;
 //   console.log(price);
 // }
 // calculatePrice(5000); //call the function
+// console.log(1000 + "5000");
 
 //returning something from a function
 // function calculatePrice(squareMeters) {
-//   // const price = 1000 * squareMeters;
-//   // return price;
+//   const price = 1000 * squareMeters;
+//   return price;
 //   //same as above;
 //   // return 1000 * squareMeters;
 // }
@@ -110,17 +137,17 @@
 // };
 //shorter syntax:
 //same as above (direct return without curly braces for a single operation)
-// const calculatePrice = (squareMeters) => 1000 + squareMeters;
+// const calculatePrice = (squareMeters) => 1000 * squareMeters;
 // console.log(calculatePrice(5000));
 
-// var hello = "hello";
+// var hello = "hello"; //global scope
 // const consoleHello = (helloString) => {
 //   //console.log(helloString);
 //   hello = helloString;
 // };
 // consoleHello("Ciao");
 // console.log(hello);
-//********************************************** */
+// //********************************************** */
 //naming for functions:
 // always start with a verb: ex: calculate, make, destroy, put, delete etc...
 
@@ -130,6 +157,7 @@
 //string concatenation
 // const price = 9000;
 // const result = "The total cost will be: " + price + " USD"; //string concatenation, the whole thing will be treated as a string
+// console.log(result, typeof result);
 // const name = "John";
 // const age = 12;
 // const result = "Name is " + name + " and his age is " + age + " years old";
@@ -165,9 +193,12 @@
 // == comparison //useful only when values are numbers
 // === strict comparison
 
-// const num1 = 3;
-// const num2 = "3";
-// console.log("normal comparison", num1 === num2);
+// let num1 = 3;
+// let num2 = "3";
+// console.log("normal comparison", num1 == num2);
+// console.log("strict comparison", num1 === num2);
+// num1 = num2;
+// console.log("assignment", typeof num1);
 
 //loose comparison:
 // compares only value
@@ -177,14 +208,19 @@
 
 //strict comparison:
 //compares type and value
-// const price = '5000';
+// const price = "5000";
 // price === 5000 ---> false! price is a string and 5000 is a number
 // price === '5000' ---> true
+// if (price === "5000") {
+//   console.log("Price is 5000");
+// }
 
 //IF ELSE OPERATOR
-// const price = 5000;
+// const price = 5001;
 // if (price === 5000) {
 //   console.log("Price is 5000"); //<--- this will be printed
+// } else if (price === 100000) {
+//   console.log("Price 100000");
 // } else {
 //   console.log("Price is NOT the expected value");
 // }
@@ -193,15 +229,15 @@
 // // <= less than or equal to
 // const price = 5000;
 // if (price >= 5000) {
-//    console.log("Price is greater or more than 5000");
+//   console.log("Price is greater or more than 5000");
 // }
 // if (price <= 5000) {
-//    console.log("Price is less or equal than 5000");
+//   console.log("Price is less or equal than 5000");
 // }
 
 // //!= vs !==
 // ! + = vs ! + ==
-// const price = 5000;
+// const price = 6000;
 // if (price != 6000) {
 //   console.log("Price is NOT 6000");
 // }
@@ -243,6 +279,9 @@
 //TERNARY OPERATOR
 // const price = 5000;
 // price > 3000
+//   ? console.log("Price is more than 3000")
+//   : console.log("Price is less than 3000");
+// price > 3000
 //   ? price === 5000
 //     ? console.log("Price is 5000")
 //     : console.log("Price is more than 3000")
@@ -261,6 +300,7 @@
 // a value with something assigned is by default truthy, except with value as 0 or false
 // const price = 5; //true
 // const price = true; //true
+// const price = false; //false
 // const price = -1; //true
 // const price = 0; //false
 // const price = false; //false
@@ -277,33 +317,45 @@
 //   //truthy
 //   let hello = "hello"; //let is scoped to the block
 //   console.log(hello, "inside the block");
+
+//   const world = "world"; //const is scoped to the block
+//   console.log(world, " world inside the block");
+
 //   var hi = "hi";
 //   console.log(hi, "inside the block");
 // }
 // console.log(hi, "outside the block"); //hi is accessible inside and outside a block
 // console.log(hello, "outside the block"); //outside it throws an error, hello is not defined in this scope (outside the block)
+// console.log(world, " world outside the block");
 
 // /* The function `someFunc()` is defining two variables `ok` and `good` inside its block scope. */
+// var ok = true;
 // function someFunc() {
 //   var ok = 100;
 //   console.log(ok, "inside the function");
 //   let good = 50;
 //   console.log(good, "inside the function");
+//   const world = "world"; //const is scoped to the block
+//   console.log(world, " world inside the block");
 // }
 // someFunc();
-// console.log(ok, "outside the function"); //throws an error, ok is not defined outside the function
-// console.log(good, "outside the function"); //throws an error, good is not defined outside the function
+// console.log(typeof ok, "outside the function"); //throws an error, ok is not defined outside the function
+// console.log(good, "good outside the function"); //throws an error, good is not defined outside the function
+// console.log(world, "world outside the function");
 //*************************************************************************************************** */
 // -- manipulating HTML and CSS --
 
 //MANIPULATE HTML
 // hello; //throws an error:script.js:240 Uncaught ReferenceError: hello is not defined
-// console; //this is something that exists in the browser, it doesn't throw an error
+//console; //this is something that exists in the browser, it doesn't throw an error
 // console.log //accessing a method of the console object with the point notation
+// console.error("this is an error");
 //document; //document object is also something that exists in the browser, it doesn't throw an error
 //ex: document.images ---> it gives all the images in the page
+// console.log(document.images);
 //getElementsByClassName ---> selects a class name
 // const heading = document.getElementsByClassName("heading");
+// const title = document.getElementById("title"); //#title
 // querySelector ---> selects a class name or id name or a element tag name
 // const headingTag = document.querySelector("#title"); //select by tag name (in this case returns the first Element within the document that matches the specified selector)
 // console.log("headingTag", headingTag); //only returns the first h1 on the page
@@ -341,7 +393,7 @@
 
 //*************************************************************************************************** */
 // -- events and functions for handling events (also called "event handlers") --
-const headingEl = document.querySelector(".heading");
+// const headingEl = document.querySelector(".heading");
 //addEventListener('EVENT_TYPE', FUNCTION)
 
 //handler function, usually called with the event type + Handler
@@ -353,6 +405,6 @@ const headingEl = document.querySelector(".heading");
 
 //with an anonymous function
 // headingEl.addEventListener("click", () => {
-// //   headingEl.style.color = "red";
+//   headingEl.style.color = "red";
 //   console.log("changed color");
 // });
