@@ -26,8 +26,8 @@ const formatCurrency = (amount) => {
 // -----------------------------------------------------
 
 // 1. create a showTransactionDetails function to show transaction details based on index (use .value for the inputElement index). Use the formatCurrency function to format the amount.
-function showTransactionDetails() {}
-
+const inputField = document.querySelector("input");
+let idValue = inputField.getAttribute("value");
 // Create a click event listener for show-btn element
 
 // Start initial visualization calling the main showTransactionDetails fumction
