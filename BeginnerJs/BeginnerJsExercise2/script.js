@@ -1,13 +1,13 @@
 // Dati Iniziali
 const transactions = [
-  { id: 1, description: "Stipendio Mensile", amount: -2500.0, type: "income" },
-  { id: 2, description: "Caffè e snack", amount: 4.5, type: "expense" },
-  { id: 3, description: "Affitto", amount: 950.0, type: "expense" },
-  { id: 4, description: "Rimborso Tasse", amount: -150.0, type: "income" },
+  { id: 1, description: "Stipendio Mensile", amount: +2500.0, type: "income" },
+  { id: 2, description: "Caffè e snack", amount: -4.5, type: "expense" },
+  { id: 3, description: "Affitto", amount: -950.0, type: "expense" },
+  { id: 4, description: "Rimborso Tasse", amount: +150.0, type: "income" },
   {
     id: 5,
     description: "Spesa al supermercato",
-    amount: 75.2,
+    amount: -75.2,
     type: "expense",
   },
 ];
@@ -26,9 +26,32 @@ const formatCurrency = (amount) => {
 // -----------------------------------------------------
 
 // 1. create a showTransactionDetails function to show transaction details based on index (use .value for the inputElement index). Use the formatCurrency function to format the amount.
-const inputField = document.querySelector("input");
-let idValue = inputField.getAttribute("value");
+function showTransactionDetails() {
+  const inputField = document.querySelector("input");
+  let idValue = inputField.value;
+  const recordId = document.querySelector("#record-id");
+  let description = transactions[idValue].description;
+  const recordDescription = document.querySelector("#record-description");
+  let amount = transactions[idValue].amount;
+  const recordAmount = document.querySelector("#record-amount");
+  recordId.innerHTML = "";
+  recordDescription.innerHTML = "";
+  recordAmount.innerHTML = "";
+  if (amount < 0) {
+    recordAmount.classList.add("expense");
+    recordAmount.classList.remove("income");
+  } else {
+    recordAmount.classList.add("income");
+    recordAmount.classList.remove("expense");
+  };
+  recordId.insertAdjacentHTML("beforeend", idValue);
+  recordDescription.insertAdjacentHTML("beforeend", description);
+  recordAmount.insertAdjacentHTML("beforeend", formatCurrency(amount));
+
+}
 // Create a click event listener for show-btn element
+const showDetailsButton = document.querySelector("#show-btn");
+showDetailsButton.addEventListener('click', showTransactionDetails);
 
 // Start initial visualization calling the main showTransactionDetails fumction
 
@@ -36,9 +59,9 @@ let idValue = inputField.getAttribute("value");
 document.head.insertAdjacentHTML(
   "beforeend",
   `
-    <style>
-        .income { color: green; font-weight: bold; }
-        .expense { color: red; }
-    </style>
-`
+     <style>
+       .income {color: green; font-weight: bold;}
+      .expense { color: red; }
+     </style>
+    `
 );
