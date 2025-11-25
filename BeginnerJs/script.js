@@ -408,3 +408,29 @@
 //   headingEl.style.color = "red";
 //   console.log("changed color");
 // });
+
+//THIS
+// const user = {
+//   name: "Leo",
+//   hobbies: ["music", "fishing", "computers"],
+//   logNameLater: function () {
+//     // THIS è l'oggetto 'user'
+//     setTimeout(function () {
+//       // QUESTO THIS è diventato l'oggetto GLOBALE (window/undefined)
+//       console.log(this.name); // Risultato: undefined (o errore)
+//     }, 100);
+//   },
+// };
+const user = {
+  name: "Leo",
+  hobbies: ["music", "fishing", "computers"],
+  logNameLater: function () {
+    // THIS è l'oggetto 'user'
+    setTimeout(() => {
+      // QUI RIUSCIAMO AD ACCEDERE AL CONTESTO DI THIS
+      console.log(this.name); //
+    }, 100);
+  },
+};
+
+console.log("user.name accessed with this", user.logNameLater());
