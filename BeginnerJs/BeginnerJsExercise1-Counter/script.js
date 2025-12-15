@@ -8,7 +8,6 @@ function incrementValue() {
   +counterValue.textContent++;
 }
 function decrementValue() {
-  console.log("counterValue.innerHTML", typeof +counterValue.textContent);
   +counterValue.textContent--;
 }
 function resetValue() {

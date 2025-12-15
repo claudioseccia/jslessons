@@ -408,3 +408,336 @@
 //   headingEl.style.color = "red";
 //   console.log("changed color");
 // });
+
+//THIS
+// const user = {
+//   name: "Leo",
+//   hobbies: ["music", "fishing", "computers"],
+//   logNameLater: function () {
+//     // THIS è l'oggetto 'user'
+//     setTimeout(function () {
+//       // QUESTO THIS è diventato l'oggetto GLOBALE (window/undefined)
+//       console.log(this.name); // Risultato: undefined (o errore)
+//     }, 100);
+//   },
+// };
+// const user = {
+//   name: "Leo",
+//   hobbies: ["music", "fishing", "computers"],
+//   logNameLater: function () {
+//     // THIS è l'oggetto 'user'
+//     setTimeout(() => {
+//       // QUI RIUSCIAMO AD ACCEDERE AL CONTESTO DI THIS
+//       console.log(this.name); //
+//     }, 100);
+//   },
+// };
+
+// console.log("user.name accessed with this", user.logNameLater());
+
+//STRINGS
+// const text = "Hello everyone!   ";
+//length (number of characters)
+// console.log("text.length", text.length);
+//includes  true or false
+// console.log(text.includes("o")); //true
+// console.log(text.includes("i")); //false
+// //toUpeercase()
+// console.log(text.toUpperCase()); //converts to uppercase
+// //trim()
+// const trimmedText = text.trim();
+// console.log("text.length", trimmedText.length);
+// console.log(text.trim()); //removes white spaces
+// //substring
+// console.log(text.substring(0, 4)); //Hell
+// console.log(text.substring(1)); //ello everyone!
+
+// //chaining
+// const result = text.toUpperCase().trim().substring(4);
+// console.log("result", result);
+// //*************************************************************************************************** */
+// //NUMBERS
+// const total = 1543.95345;
+// //toFixed(0) //only integer values
+// console.log(total.toFixed());
+// //toFixed(2) //2 decimal values
+// console.log(total.toFixed(2));
+// console.log(typeof total); //number
+// //*************************************************************************************************** */
+// //BOOLEANS
+// //when checking a string
+// const nycText = "Map of NYC";
+// console.log("nycText", nycText);
+// // if (nycText.includes("NYC")) {
+// if (!nycText.includes("NYC")) {
+//   console.log("includes NYC");
+// } else {
+//   console.log("does not include NYC");
+// }
+// //when dealing with a server
+// const response = {
+//   statusCode: 500,
+//   ok: false,
+//   data: [1, 2, 3],
+//   error: -1,
+// };
+
+// FALSY
+// false (The Boolean value itself)
+// 0 (The number zero)
+// -0 (Negative zero, though it behaves identically to 0 in most cases)
+// "" (An empty string)
+// null (The intentional absence of any object value)
+// undefined (A variable that has been declared but not assigned a value)
+// NaN (Not a Number)
+
+//NULLISH
+// null (The intentional absence of any object value)
+// undefined (A variable that has been declared but not assigned a value)
+
+// if (!response.error) {
+//   console.log("Something went wrong");
+// }
+// //*************************************************************************************************** */
+// //ARRAYS
+// const numbers = [99, 5, 8, 16];
+// console.log("numbers", numbers);
+// // //length (number of elements in the array)
+// console.log(numbers.length);
+// //push() //add an element
+// numbers.push(9);
+// console.log("numbers", numbers);
+// //pop() //remove an element
+// numbers.pop();
+// console.log(numbers);
+// //includes()
+// console.log(numbers.includes(9));
+// //foreach() //most common loop in javascript
+// numbers.forEach((number) => console.log("number in array by two", number * 2));
+// //objects in array
+// const data = [
+//   {
+//     name: "john",
+//     age: 45,
+//   },
+//   {
+//     name: "Emily",
+//     age: 28,
+//   },
+//   {
+//     name: "Mike",
+//     age: 32,
+//   },
+// ];
+// console.log("data", data);
+// console.log("emily age", data[1].age);
+
+// //*************************************************************************************************** */
+// //OBJECTS
+// //object in object
+// const userObj = {
+//   name: "Emily",
+//   age: 30,
+//   hobbies: ["knitting", "programming"],
+//   address: {
+//     city: "Miami",
+//     state: "Florida",
+//   },
+// };
+// console.log("userObj", userObj);
+
+// /*
+// //property name is sometimes as property value
+// const username = input.value;
+// const password = input.value;
+// const newUser = {
+//   username: username,
+//   password: password,
+// };
+// //passing an object as an argument to function
+// const logUser = (user) => {
+//   console.log(user.name);
+//   console.log(user.age);
+// };
+// logUser(userObj);
+
+//*************************************************************************************************** */
+// //increment and decrement values
+// let number = 100;
+// // increment by 1
+// number = number + 1;
+// //same as
+// number++;
+// console.log("number", number);
+
+// // decrement by 1
+// number = number - 1;
+// number--;
+// console.log("number", number);
+//*************************************************************************************************** */
+//FUNCTIONS
+//overview again
+// function addNumbers() {
+//   //normal named function
+//   const newNumber = 100;
+//   console.log(newNumber);
+// }
+// const addNumbers = () => {
+//   //arrow function
+//   const newNumber = 100;
+//   console.log(newNumber);
+// };
+// addNumbers();
+
+//calling other functions in function body
+// const logHello = () => {
+//   console.log("Hello");
+//   console.log("Hi");
+// };
+// const addNumbers = () => {
+//   const newNumber = 100;
+//   console.log(newNumber);
+//   logHello();
+//   console.log(9999);
+// };
+// addNumbers();
+
+//refactoring
+
+//borh are logging hello and hi
+//so we can create a function that does that
+// const logGreetings = () => {
+//   console.log("hello");
+//   console.log("hi");
+// };
+// const doSomething = () => {
+//   console.log(43345);
+//   console.log(38453);
+//   //   console.log("hello");
+//   //   console.log("hi");
+//   logGreetings();
+// };
+// const logStuff = () => {
+//   console.log(true);
+//   console.log(false);
+//   console.log([2, 3, 4, 6]);
+//   //   console.log("hello");
+//   //   console.log("hi");
+//   logGreetings();
+// };
+
+//early return / stop function execution
+// const checkValidity = (number) => {
+//   if (number < 50) {
+//     console.log("Denied");
+//     return; //stops
+//   }
+//   console.log("Approved");
+// };
+// console.log(checkValidity(30)); //function will return and it will not print out 'Approved'
+//*************************************************************************************************** */
+//HOISTING
+// var number;
+// number = 10;
+// console.log(number);
+
+//we can change the order and it will work too: that's HOISTING
+// number = 10;
+// console.log(number);
+// var number; //declared at the end of the script (HOISTED: put at the top of the script)
+
+//same here, we call the function before it's created
+// logStuff();
+// function logStuff() {
+//   console.log("hello");
+// }
+
+//NOTE: HOISTING WILL NOT WORK WITH LET AND CONST AND ARROW FUNCTIONS
+// number = 10;
+// let number;
+// console.log(number); //error!!!
+
+// number = 10;
+// const number;
+// console.log(number); //error!!!
+
+// logStuff(); //error!! arrow function cannot be hoisted
+// const logStuff = () => {
+//   console.log("Hi");
+// };
+
+//*************************************************************************************************** */
+//TIMERS
+// console.log("Hello");
+// console.log("Hi");
+
+// const triggerLogs = () => {
+//   console.log("Hello");
+//   console.log("Hi");
+// };
+// //run after 2 seconds
+// setTimeout(() => {
+//   triggerLogs();
+// }, 5000); //function is run after 5 seconds once
+
+// setInterval(() => {
+//   console.log("Hello");
+//   console.log("Hi");
+// }, 2000); //function is called every 2 seconds
+//*************************************************************************************************** */
+
+//LOOPS
+//foreaach
+// const numbersArr = [5, 10, 15];
+
+// numbersArr.forEach(function (nr) {
+//   const numbersList = document.querySelector(".numbersList");
+//   const liEl = document.createElement("li");
+//   liEl.innerHTML = `<li>${nr} ciao</li>`;
+
+//   /* const liEl = document.createElement("li");
+//   liEl.append(nr);
+//   numbersList.append(liEl); */
+
+//   numbersList.insertAdjacentElement("beforeend", liEl);
+// });
+// let div = document.createElement("div");
+// let p = document.createElement("p");
+// div.append("Some text", p);
+// console.log(numbersArr);
+// numbersArr.forEach((number, index) => {
+//   return (numbersArr[index] = number + 1);
+// }); //executed for each element of the array
+// console.log(numbersArr); //[6, 11, 16]
+
+//for
+// for (let i = 0; i < numbersArr.length; i++) {
+//   // console.log(numbersArr[i] + 1);
+//   const added = numbersArr[i] + 1;
+//   numbersArr[i] = added;
+// }
+// console.log(numbersArr);
+
+// The rest of code
+//*************************************************************************************************** */
+//FETCH API
+// fetch("http://jsonplaceholder.typicode.com/todos"); //make the network request
+// JSON = JAVASCRIPT OBJECT NOTATION
+//assign it to a variable
+// const serverData = fetch("http://jsonplaceholder.typicode.com/todos");
+// console.log(serverData); //returns "Promise {<pending>}"
+
+//it returns a promise, so we use .then
+// fetch("http://jsonplaceholder.typicode.com/todos")
+//   .then((res) => {
+//     if (!res.ok) {
+//       console.log("Problem"); //typically deal a 404 error
+//     }
+//     return res.json();
+//   })
+//   .then((data) => {
+//     console.log(data);
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
