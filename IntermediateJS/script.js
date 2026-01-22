@@ -396,7 +396,7 @@ console.log(arr); //['quick', 'quock', 'quack']
 // slice()
 // reverse()
 //
-
+/*
 //delete()
 //remove the element at the specified index
 const arr = [1, 2, 3, 4, 5];
@@ -452,7 +452,8 @@ console.log(nums3); // [2, 3, 4]
 const nums4 = [1, 2, 3, 4, 5];
 nums4.reverse();
 console.log(nums4); // [5, 4, 3, 2, 1]
-/* */
+*/
+
 /*
 // CHALLENGE
 let inventory = ["Abbey Road", "The Dark Side of the Moon", "Thriller", "Back in Black"];
@@ -483,3 +484,76 @@ Formatting for Print:
 Use toString() on fullCollection and log it to see the default comma-separated string.
 Use join() on fullCollection to create a single string where each album is separated by a " | " symbol (e.g., Album 1 | Album 2).
 */
+
+//
+// isArray()
+// indexOf()
+// lastIndexOf()
+// find()
+// findIndex()
+// includes()
+//
+
+//isArray()
+const arr = ["Js", "React", "Node", "Js"];
+console.log("isArray", Array.isArray(arr)); //true
+
+//
+//indexOf()
+//array.indexOf(item,start)
+//returns the index of the first element in the array that matches the specified value, -1 if not found, search from left to right. Negative start values count from the last element but still search from left to right
+const index = arr.indexOf("Js");
+console.log("indexOf", index); //0
+
+//
+//lastIndexOf()
+//array.lastIndexOf(item,start)
+//returns the index of the last element in the array that matches the specified value, -1 if not found, search from right to left. Negative start values count from the last element but still search from right to left
+const lastIndex = arr.lastIndexOf("Js");
+console.log("lastIndexOf", lastIndex); //3
+
+//
+//find()
+//array.find(callback, thisArg)
+//returns the value of the first element in the array that matches the specified condition, undefined if not found <----------- FIND (returns first element that matches the condition)
+const find = arr.find((item) => item === "Js");
+console.log("find", find); //Js
+
+const nums = [5, 12, 8, 130, 44];
+const result = nums.find((num) => num > 10);
+// if(result) {
+//   //... if undefined doesn't run
+// }
+console.log("find() result", result);
+
+//FILTER DIFFERENCE - filter returns an array of element that fullfill the condition <----------- FILTER
+const filterresult = nums.filter((num) => num > 10);
+console.log("filter() result", filterresult);
+
+//
+//findIndex()
+//array.findIndex(callback, thisArg)
+//returns the index of the first element in the array that matches the specified condition, -1 if not found
+const findIndex = arr.findIndex((item) => item === "Js");
+console.log("findIndex", findIndex); //0
+//difference between find() and findIndex()
+// indexOf()	                        findIndex()
+// Takes a value (e.g., 5, "apple")	Takes a callback function (e.g., x => x > 10)
+// Uses strict equality (===)	        Executes a function for each element
+// Simple arrays of primitives	        Arrays of objects or complex conditions
+// Cannot find NaN	                    Can find NaN (via Number.isNaN)
+
+//
+//includes()
+//checks whether an array includes a certain value
+//return true or false
+// arr.includes(value);
+const hasReact = arr.includes("React");
+console.log("includes", hasReact);
+
+const newTechFilter =
+  arr.includes("React") && arr.filter((item) => item === "Js");
+console.log("newTechFilter", newTechFilter);
+
+const hasZero = nums.includes(0);
+console.log(hasZero);
