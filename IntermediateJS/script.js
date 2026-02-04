@@ -495,47 +495,47 @@ Use join() on fullCollection to create a single string where each album is separ
 //
 
 //isArray()
-const arr = ["Js", "React", "Node", "Js"];
-console.log("isArray", Array.isArray(arr)); //true
+// const arr = ["Js", "React", "Node", "Js"];
+// console.log("isArray", Array.isArray(arr)); //true
 
 //
 //indexOf()
 //array.indexOf(item,start)
 //returns the index of the first element in the array that matches the specified value, -1 if not found, search from left to right. Negative start values count from the last element but still search from left to right
-const index = arr.indexOf("Js");
-console.log("indexOf", index); //0
+// const index = arr.indexOf("Js");
+// console.log("indexOf", index); //0
 
 //
 //lastIndexOf()
 //array.lastIndexOf(item,start)
 //returns the index of the last element in the array that matches the specified value, -1 if not found, search from right to left. Negative start values count from the last element but still search from right to left
-const lastIndex = arr.lastIndexOf("Js");
-console.log("lastIndexOf", lastIndex); //3
+// const lastIndex = arr.lastIndexOf("Js");
+// console.log("lastIndexOf", lastIndex); //3
 
 //
 //find()
 //array.find(callback, thisArg)
 //returns the value of the first element in the array that matches the specified condition, undefined if not found <----------- FIND (returns first element that matches the condition)
-const find = arr.find((item) => item === "Js");
-console.log("find", find); //Js
+// const find = arr.find((item) => item === "Js");
+// console.log("find", find); //Js
 
-const nums = [5, 12, 8, 130, 44];
-const result = nums.find((num) => num > 10);
+// const nums = [5, 12, 8, 130, 44];
+// const result = nums.find((num) => num > 10);
 // if(result) {
 //   //... if undefined doesn't run
 // }
-console.log("find() result", result);
+// console.log("find() result", result);
 
-//FILTER DIFFERENCE - filter returns an array of element that fullfill the condition <----------- FILTER
-const filterresult = nums.filter((num) => num > 10);
-console.log("filter() result", filterresult);
+// //FILTER DIFFERENCE - filter returns an array of element that fullfill the condition <----------- FILTER
+// const filterresult = nums.filter((num) => num > 10);
+// console.log("filter() result", filterresult);
 
 //
 //findIndex()
 //array.findIndex(callback, thisArg)
 //returns the index of the first element in the array that matches the specified condition, -1 if not found
-const findIndex = arr.findIndex((item) => item === "Js");
-console.log("findIndex", findIndex); //0
+// const findIndex = arr.findIndex((item) => item === "Js");
+// console.log("findIndex", findIndex); //0
 //difference between find() and findIndex()
 // indexOf()	                        findIndex()
 // Takes a value (e.g., 5, "apple")	Takes a callback function (e.g., x => x > 10)
@@ -548,7 +548,7 @@ console.log("findIndex", findIndex); //0
 //checks whether an array includes a certain value
 //return true or false
 // arr.includes(value);
-const hasReact = arr.includes("React");
+/* const hasReact = arr.includes("React");
 console.log("includes", hasReact);
 
 const newTechFilter =
@@ -556,4 +556,173 @@ const newTechFilter =
 console.log("newTechFilter", newTechFilter);
 
 const hasZero = nums.includes(0);
-console.log(hasZero);
+console.log(hasZero); */
+
+//
+// entries()
+// every()
+// some()
+// fill()
+// copyWitIn()
+// valueOf()
+
+//entries()
+//creates an array iterator object to get index and value of eache element
+// const brands = ["Ferrari", "Lamborghini", "Porsche"];
+
+// //loop through each element using entries()
+// for (const entry of brands.entries()) {
+//   console.log(entry);
+// }
+
+// //or if we want to separate index and value
+// for (const [index, item] of brands.entries()) {
+//   console.log(`index: ${index}, item: ${item}`);
+// }
+
+//every() --> ritorna un booleano
+//test whether ALL elements in the array pass a condition
+// const numsArr = [1, 2, 3, 4, 5];
+// const numsArr = [2, 4, 6];
+// const even = numsArr.every((num) => num % 2 === 0);
+// console.log("every", even);
+
+// some()
+//test whether SOME elements in the array pass a condition
+// const some = numsArr.some((num) => num % 2 === 0);
+// console.log("some", some);
+
+//fill()
+//nums.fill(value, start, end);
+//fill all elements in the array with a static value
+// const nums = [1, 2, 3, 4];
+// //nums.fill(0); //fill all values with 0
+// nums.fill(0, 1, 3); //fill to index 1 to 2 //[1, 0, 0, 4]
+// console.log("fill", nums);
+
+//copyWitIn()
+//copies a part of an array to another location in the same array, changes the original array and doesn't add new elements
+// const numsArray = [1, 2, 3, 4, 5];
+// numsArray.copyWithin(1, 3, 5); //copy elements from index 3 to 4 to index 1
+// console.log("copyWithin", numsArray);
+
+//valueOf()
+//returns the primitive value of Number, String, Booolean or Date Object
+//Javascript calls automatically but can be used to get the primitive value esplicitly
+//object.valueOf()
+// const number = new Number(123);
+// console.log("valueOf", number.valueOf()); //123
+
+// const string = new String("Hello");
+// console.log("valueOf", string.valueOf()); //"Hello"
+
+//
+// forEach()
+// map()
+// filter()
+// reduce()
+// reduceRight()
+// from()
+
+/* const tech = [
+  "Javascript",
+  "React.js",
+  "Next.js",
+  "Node.js",
+  "Express",
+  "Vue.js",
+];
+console.log(tech);
+//forEach()
+//executes a provided function for each element of the array
+//it does not return anything and does not change the original array.
+//useful for performing actions on each elements of the array
+const newTechForEach = []; //same if I declare it as a new Array();
+tech.forEach((item, index) => {
+  console.log("tech", item, "index", index);
+  // tech[index] = item.toUpperCase(); //to change the original array
+  newTechForEach[index] = item.toUpperCase(); //to create a new array without changing the original
+});
+ */
+// const nums = [1, 2, 3, 4, 5];
+// nums.forEach((el, index) => {
+//   nums[index] = el * index;
+// });
+// console.log("nums", nums);
+// console.log("forEach", newTechForEach);
+
+//map()
+// const newArray = array.map(callback);
+//creates a new array applying a function to each element of the original array. IT DOES NOT CHANGE THE ORIGINAL ARRAY (IMMUTABILITY)
+// const newTech = tech.map((item, index) => {
+//   return item.toUpperCase() + " v.1.0";
+// });
+// console.log("map - newTech", newTech);
+
+//filter() <--- array
+// const newArray = array.filter(callback);
+//filter creates a new array with elements that pass a condition. IT DOES NOT CHANGE THE ORIGINAL ARRAY (IMMUTABILITY)
+// const newTechFilter = tech.filter((item, index) => {
+//   return item.includes("js");
+// });
+// console.log("filter", newTechFilter);
+
+//reduce()
+// const newValue = array.reduce((accumulator,currentValue)=> {...}, initialValue);
+//reduce creates a new value by applying a function to each element of the original array. IT DOES NOT CHANGE THE ORIGINAL ARRAY (IMMUTABILITY)
+/* const numbers = [10, 20, 30];
+const total = numbers.reduce((acc, item, index) => {
+  console.log("index", index, "item", item, "accumulator", acc);
+  return acc + item;
+}, 0);
+console.log("reduce total", total);
+
+const objNums = [
+  {
+    value: 10,
+  },
+  {
+    value: 20,
+  },
+  {
+    value: 30,
+  },
+];
+const objTotal = objNums.reduce((acc, item, index) => {
+  return acc + item.value;
+}, 0); */
+
+//reduceRight()
+// const newValue = array.reduceRight((accumulator,currentValue)=> {...}, initialValue);
+//same as reduce but starts from the last element
+// const tech = [
+//   "Javascript",
+//   "React.js",
+//   "Next.js",
+//   "Node.js",
+//   "Express",
+//   "Vue.js",
+// ];
+// const sentence = tech.reduceRight((acc, item, index) => {
+//   //console.log("index", index, "item", item, "accumulator", acc);
+//   return acc + " " + item;
+// }, "The best tech stack is: ");
+// console.log("", sentence);
+
+/**/
+//from()
+// const newArray = Array.from(arrayLikeIterable, mapFunction);
+//converts an array-like object into an array. IT DOES NOT CHANGE THE ORIGINAL ARRAY (IMMUTABILITY)
+//difference. it's called as a Static method from the Array class, used to convert or convert AND transform (usually from String, a Set, or DOM elements)
+//used to create an array from something else, usually
+// const techString = "React";
+// const techArrayFrom = Array.from(techString);
+// console.log("from string", techArrayFrom);
+//ex, with mapping
+// const nums = [1, 2, 3];
+// const doubled = Array.from(nums, (n) => num * 2);
+// console.log("from doubled", doubled);
+
+// const labels = nums.map((n) => `Price: $${n}`);
+// // Result: ["Price: $10", "Price: $20", "Price: $30"];
+// console.log("labels", labels);
