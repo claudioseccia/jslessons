@@ -709,7 +709,6 @@ const objTotal = objNums.reduce((acc, item, index) => {
 // }, "The best tech stack is: ");
 // console.log("", sentence);
 
-/**/
 //from()
 // const newArray = Array.from(arrayLikeIterable, mapFunction);
 //converts an array-like object into an array. IT DOES NOT CHANGE THE ORIGINAL ARRAY (IMMUTABILITY)
@@ -726,3 +725,113 @@ const objTotal = objNums.reduce((acc, item, index) => {
 // const labels = nums.map((n) => `Price: $${n}`);
 // // Result: ["Price: $10", "Price: $20", "Price: $30"];
 // console.log("labels", labels);
+
+// REDUCE COMPLEX EXAMPLES
+// Example 1: Return avarage grade from an array of grades
+// const grades = [85, 90, 78, 92];
+// console.log("GRADES", grades);
+// const average = grades.reduce((total, grade, index, array) => {
+//   total += grade;
+//   console.log("array", array, "total", total, "grade", grade, "index", index);
+//   // If we are at the last item, divide by the length
+//   if (index === array.length - 1) {
+//     return total / array.length;
+//   }
+//   //else return the sum (total is the accumulator)
+//   return total;
+// }, 0);
+// console.log(average); // Output: 86.25
+
+//Part 2: Intermediate (Transformations)
+//transforming data structures, such as turning arrays into objects or filtering while reducing
+// const fruits = ["apple", "banana", "orange", "apple", "orange", "apple"];
+
+// const fruitCounts = fruits.reduce((counts, fruit, index) => {
+//   console.log(
+//     "acc - counts",
+//     counts,
+//     "fruit",
+//     fruit,
+//     "counts[fruit]",
+//     counts[fruit],
+//     "index",
+//     index,
+//   );
+//   // If the fruit exists in the object, increment it; otherwise, set to 1
+//   counts[fruit] = (counts[fruit] || 0) + 1;
+//   return counts;
+// }, {}); // Initial value is an empty object
+
+// console.log(fruitCounts);
+// Output: { apple: 3, banana: 1, orange: 2 }
+
+// Exercise 4: Flattening an Array of Arrays
+const nestedArray = [
+  [1, 2],
+  [3, 4],
+  [5, 6],
+];
+const flattenedArray = nestedArray.reduce((acc, item) => acc.concat(item), []);
+console.log(flattenedArray);
+/*
+// Part 3: Complex (Real-world Data Structures)
+const people = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 25 },
+  { name: "David", age: 30 },
+];
+// {
+//   25: [{ name: 'Alice', age: 25 }, { name: 'Charlie', age: 25 }],
+//   30: [{ name: 'Bob', age: 30 }, { name: 'David', age: 30 }]
+// }
+const peopleByAge = people.reduce((acc, person) => {
+  const age = person.age;
+  // If the key doesn't exist yet, create it as an empty array
+  if (!acc[age]) {
+    acc[age] = [];
+  }
+  // Push the current person into the correct array
+  acc[age].push(person);
+  return acc;
+}, {});
+
+console.log(peopleByAge);
+
+// Exercise 6: Calculating Cart Total with Logic
+const cart = [
+  { name: "Laptop", price: 1000, isTaxable: true, inStock: true },
+  { name: "Apple", price: 2, isTaxable: false, inStock: true },
+  { name: "T-shirt", price: 20, isTaxable: true, inStock: false }, // Skip this
+  { name: "Book", price: 15, isTaxable: true, inStock: true },
+];
+const totalCost = cart.reduce((total, item) => {
+  if (!item.inStock) return total; // Skip out of stock items
+
+  let itemPrice = item.price;
+
+  if (item.isTaxable) {
+    itemPrice *= 1.1; // Add 10% tax
+  }
+
+  return total + itemPrice;
+}, 0);
+
+console.log(totalCost);
+// Output: 1033.5
+// could be done by chaining .filter().map().reduce(). However, doing it in a single .reduce() is often more performant because you only iterate over the array once, rather than three times.
+
+// Exercise 7: Pipeline Processing (Advanced)
+const double = (x) => x * 2;
+const addTen = (x) => x + 10;
+const square = (x) => x * x;
+
+const functionsArray = [double, addTen, square];
+const initialValue = 5;
+
+const result = functionsArray.reduce((currentValue, currentFunction) => {
+  return currentFunction(currentValue);
+}, initialValue);
+
+console.log(result); // Output: 400
+*/
