@@ -766,14 +766,14 @@ const objTotal = objNums.reduce((acc, item, index) => {
 // Output: { apple: 3, banana: 1, orange: 2 }
 
 // Exercise 4: Flattening an Array of Arrays
-const nestedArray = [
-  [1, 2],
-  [3, 4],
-  [5, 6],
-];
-const flattenedArray = nestedArray.reduce((acc, item) => acc.concat(item), []);
-console.log(flattenedArray);
-/*
+// const nestedArray = [
+//   [1, 2],
+//   [3, 4],
+//   [5, 6],
+// ];
+// const flattenedArray = nestedArray.reduce((acc, item) => acc.concat(item), []);
+// console.log(flattenedArray);
+
 // Part 3: Complex (Real-world Data Structures)
 const people = [
   { name: "Alice", age: 25 },
@@ -785,18 +785,18 @@ const people = [
 //   25: [{ name: 'Alice', age: 25 }, { name: 'Charlie', age: 25 }],
 //   30: [{ name: 'Bob', age: 30 }, { name: 'David', age: 30 }]
 // }
-const peopleByAge = people.reduce((acc, person) => {
-  const age = person.age;
-  // If the key doesn't exist yet, create it as an empty array
-  if (!acc[age]) {
-    acc[age] = [];
-  }
-  // Push the current person into the correct array
-  acc[age].push(person);
-  return acc;
-}, {});
+// const peopleByAge = people.reduce((acc, person) => {
+//   const age = person.age;
+//   // If the key doesn't exist yet, create it as an empty array
+//   if (!acc[age]) {
+//     acc[age] = [];
+//   }
+//   // Push the current person into the correct array
+//   acc[age].push(person);
+//   return acc;
+// }, {});
 
-console.log(peopleByAge);
+// console.log(peopleByAge);
 
 // Exercise 6: Calculating Cart Total with Logic
 const cart = [
@@ -821,6 +821,7 @@ console.log(totalCost);
 // Output: 1033.5
 // could be done by chaining .filter().map().reduce(). However, doing it in a single .reduce() is often more performant because you only iterate over the array once, rather than three times.
 
+//--------------  PART 4: PIPELINE PROCESSING
 // Exercise 7: Pipeline Processing (Advanced)
 const double = (x) => x * 2;
 const addTen = (x) => x + 10;
@@ -834,4 +835,3 @@ const result = functionsArray.reduce((currentValue, currentFunction) => {
 }, initialValue);
 
 console.log(result); // Output: 400
-*/
