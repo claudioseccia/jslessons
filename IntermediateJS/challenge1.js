@@ -36,7 +36,7 @@ const library = [
   },
 ];
 console.log("library", library);
-//1.filter	Create a new array of books that are specifically classics (classic is on tags on object)
+//1. create a new array of books that are specifically classics (classic is on tags on object)
 
 //2. print an array with only the titles of the classics
 
